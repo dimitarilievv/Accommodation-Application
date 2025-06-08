@@ -1,0 +1,40 @@
+version: '3.9'
+
+services:
+  db:
+    image: postgres:17.4
+    restart: always
+    environment:
+      POSTGRES_USER: emt
+      POSTGRES_PASSWORD: emt
+      POSTGRES_DB: accommodation_db
+    volumes:
+      - ./backend/init.sql:/docker-entrypoint-initdb.d/init.sql
+      - pgdata:/var/lib/postgresql/data
+    ports:
+      - "2345:5432"
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "8181:8181"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/accommodation_db
+      SPRING_DATASOURCE_USERNAME: emt
+      SPRING_DATASOURCE_PASSWORD: emt
+    depends_on:
+      - db
+
+  frontend:
+    build:
+      context: ./frontend/frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+
+volumes:
+  pgdata:

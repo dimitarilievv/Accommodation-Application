@@ -13,6 +13,6 @@ public interface HostService {
     Optional<Host> save(Host host);
     Optional<Host> update(Long id,Host host);
     void deleteById(Long id);
-    List<HostByCountry> getHostCountByCountry();
-    List<HostNameProjection> getAllHostNames();
+//    List<HostByCountry> getHostCountByCountry();
+//    List<HostNameProjection> getAllHostNames();
 }

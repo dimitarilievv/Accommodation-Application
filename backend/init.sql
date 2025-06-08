@@ -52,13 +52,30 @@ CREATE TABLE shop_users_temporary_reservations
     FOREIGN KEY (shop_users_username) REFERENCES shop_users (username),
     FOREIGN KEY (temporary_reservations_id) REFERENCES accommodation (id)
 );
-CREATE MATERIALIZED VIEW display_accommodations_by_host AS
-SELECT
-    h.name,
-    h.surname,
-    COUNT(a.id) AS num_accommodations
-FROM
-    host h
-        LEFT JOIN accommodation a ON a.host_id = h.id
-GROUP BY
-    h.name, h.surname;
+
+-- Вметни држави
+INSERT INTO country (name, continent) VALUES ('Macedonia', 'Europe');
+INSERT INTO country (name, continent) VALUES ('Germany', 'Europe');
+
+-- Вметни хостови
+INSERT INTO host (name, surname, country_id) VALUES ('Ana', 'Petrova', 1);
+INSERT INTO host (name, surname, country_id) VALUES ('Ivan', 'Markov', 2);
+
+-- Вметни сместувања
+INSERT INTO accommodation (name, category, num_rooms, host_id)
+VALUES ('City Apartment', 'APARTMENT', 3, 1);
+
+-- Вметни корисник
+INSERT INTO shop_users (username, password, name, surname, role)
+VALUES ('user1', 'password1', 'Marko', 'Stanoev', 'ROLE_USER');
+
+-- CREATE MATERIALIZED VIEW display_accommodations_by_host AS
+-- SELECT
+--     h.name,
+--     h.surname,
+--     COUNT(a.id) AS num_accommodations
+-- FROM
+--     host h
+--         LEFT JOIN accommodation a ON a.host_id = h.id
+-- GROUP BY
+--     h.name, h.surname;

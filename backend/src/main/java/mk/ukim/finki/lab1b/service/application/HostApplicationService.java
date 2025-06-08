@@ -15,6 +15,6 @@ public interface HostApplicationService {
     Optional<DisplayHostDto> save(CreateHostDto host);
     Optional<DisplayHostDto> update(Long id,CreateHostDto host);
     void deleteById(Long id);
-    List<HostByCountry> getHostCountByCountry();
-    List<HostNameProjection> getAllHostNames();
+//    List<HostByCountry> getHostCountByCountry();
+//    List<HostNameProjection> getAllHostNames();
 }

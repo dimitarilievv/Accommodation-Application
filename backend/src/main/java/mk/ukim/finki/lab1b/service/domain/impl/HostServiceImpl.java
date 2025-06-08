@@ -62,13 +62,13 @@ public class HostServiceImpl implements HostService {
                 .orElseThrow(()->new RuntimeException("Host not found with id"+id));
         hostRepository.delete(host);
     }
-    @Override
-    public List<HostByCountry> getHostCountByCountry() {
-        return hostRepository.getHostCountByCountry();
-    }
-
-    @Override
-    public List<HostNameProjection> getAllHostNames() {
-        return hostRepository.findAllHostNames();
-    }
+//    @Override
+//    public List<HostByCountry> getHostCountByCountry() {
+//        return hostRepository.getHostCountByCountry();
+//    }
+//
+//    @Override
+//    public List<HostNameProjection> getAllHostNames() {
+//        return hostRepository.findAllHostNames();
+//    }
 }

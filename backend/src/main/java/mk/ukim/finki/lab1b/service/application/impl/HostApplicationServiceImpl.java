@@ -64,14 +64,14 @@ public class HostApplicationServiceImpl implements HostApplicationService {
         eventPublisher.publishEvent(new HostChangedEvent(this));
     }
 
-    @Override
-    public List<HostByCountry> getHostCountByCountry() {
-        return hostService.getHostCountByCountry();
-    }
-
-    @Override
-    public List<HostNameProjection> getAllHostNames() {
-        return hostService.getAllHostNames();
-    }
+//    @Override
+//    public List<HostByCountry> getHostCountByCountry() {
+//        return hostService.getHostCountByCountry();
+//    }
+//
+//    @Override
+//    public List<HostNameProjection> getAllHostNames() {
+//        return hostService.getAllHostNames();
+//    }
 
 }

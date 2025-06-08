@@ -65,13 +65,13 @@ public class HostController {
         return ResponseEntity.notFound().build();
     }
 
-    @GetMapping("/by-country")
-    public List<HostByCountry> getHostCountByCountry() {
-        return hostService.getHostCountByCountry();
-    }
-
-    @GetMapping("/api/hosts/names")
-    public List<HostNameProjection> getAllHostNames() {
-        return hostService.getAllHostNames();
-    }
+//    @GetMapping("/by-country")
+//    public List<HostByCountry> getHostCountByCountry() {
+//        return hostService.getHostCountByCountry();
+//    }
+//
+//    @GetMapping("/api/hosts/names")
+//    public List<HostNameProjection> getAllHostNames() {
+//        return hostService.getAllHostNames();
+//    }
 }

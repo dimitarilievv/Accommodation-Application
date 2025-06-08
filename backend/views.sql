@@ -1,3 +1,9 @@
+-- DROP MATERIALIZED VIEW IF EXISTS display_accommodations_by_host;
+-- DROP MATERIALIZED VIEW IF EXISTS host_count_by_country;
+--
+-- ALTER TABLE accommodation
+--     ALTER COLUMN id SET DATA TYPE bigint;
+
 CREATE MATERIALIZED VIEW display_accommodations_by_host AS
 SELECT
     h.name,
@@ -18,4 +24,4 @@ FROM host
          JOIN country ON host.country_id = country.id
 GROUP BY country.name;
 
-select * from country;
+-- select * from country;

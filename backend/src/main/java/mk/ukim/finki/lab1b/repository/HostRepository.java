@@ -11,12 +11,12 @@ import java.util.List;
 
 @Repository
 public interface HostRepository extends JpaRepository<Host,Long> {
-    @Query(value = "SELECT country.name AS country, COUNT(host.id) AS hostCount " +
-            "FROM host " +
-            "JOIN country ON host.country_id = country.id " +
-            "GROUP BY country.name",
-            nativeQuery = true)
-    List<HostByCountry> getHostCountByCountry();
-    @Query("SELECT h.name AS firstName, h.surname AS lastName FROM Host h")
-    List<HostNameProjection> findAllHostNames();
+//    @Query(value = "SELECT country.name AS country, COUNT(host.id) AS hostCount " +
+//            "FROM host " +
+//            "JOIN country ON host.country_id = country.id " +
+//            "GROUP BY country.name",
+//            nativeQuery = true)
+//    List<HostByCountry> getHostCountByCountry();
+//    @Query("SELECT h.name AS firstName, h.surname AS lastName FROM Host h")
+//    List<HostNameProjection> findAllHostNames();
 }
