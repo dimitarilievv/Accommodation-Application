@@ -21,7 +21,7 @@ jobs:
 
       - name: Build Docker image
         run: |
-          docker build -t dimitarilievv/accommodation-app:latest .
+          docker build -t dimitarilievv/accommodation-app:latest ./backend
 
       - name: Push Docker image
         run: |
