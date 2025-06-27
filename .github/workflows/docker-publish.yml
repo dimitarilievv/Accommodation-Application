@@ -19,10 +19,21 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      - name: Build Docker image
-        run: |
-          docker build -t dimitarilievv/accommodation-app:latest .
+#      - name: Build Docker image
+#        run: |
+#          docker build -t dimitarilievv/accommodation-app:latest .
+#
+#      - name: Push Docker image
+#        run: |
+#          docker push dimitarilievv/accommodation-app:latest
+      - name: Build backend Docker image
+        run: docker build -t dimitarilievv/accommodation-backend:latest ./backend
 
-      - name: Push Docker image
-        run: |
-          docker push dimitarilievv/accommodation-app:latest
+      - name: Build frontend Docker image
+        run: docker build -t dimitarilievv/accommodation-frontend:latest ./frontend
+
+      - name: Push backend image
+        run: docker push dimitarilievv/accommodation-backend:latest
+
+      - name: Push frontend image
+        run: docker push dimitarilievv/accommodation-frontend:latest
