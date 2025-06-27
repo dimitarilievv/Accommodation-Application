@@ -30,7 +30,7 @@ jobs:
         run: docker build -t dimitarilievv/accommodation-backend:latest ./backend
 
       - name: Build frontend Docker image
-        run: docker build -t dimitarilievv/accommodation-frontend:latest ./frontend
+        run: docker build -t dimitarilievv/accommodation-frontend:latest ./frontend/frontend
 
       - name: Push backend image
         run: docker push dimitarilievv/accommodation-backend:latest
