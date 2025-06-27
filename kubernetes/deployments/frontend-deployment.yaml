@@ -15,6 +15,6 @@ spec:
     spec:
       containers:
         - name: frontend
-          image: dimitarilievv/frontend-image:latest
+          image: dimitarilievv/accommodation-frontend:latest
           ports:
             - containerPort: 80
