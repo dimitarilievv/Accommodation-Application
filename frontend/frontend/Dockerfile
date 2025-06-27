@@ -6,6 +6,9 @@ COPY package*.json ./
 RUN npm install --production=false
 
 COPY . .
+
+RUN chmod +x node_modules/.bin/vite
+
 RUN npx vite build
 
 FROM nginx:alpine
