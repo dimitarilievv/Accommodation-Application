@@ -4,7 +4,6 @@ WORKDIR /app
 
 COPY package*.json ./
 RUN npm install --production=false
-RUN chmod +x ./node_modules/.bin/vite
 
 COPY . .
 RUN npm run build
